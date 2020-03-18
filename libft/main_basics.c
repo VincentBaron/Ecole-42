@@ -1,6 +1,52 @@
 #include <stdio.h>
 #include <string.h>
 #include "libft.h"
+#include <stdlib.h>
+
+/*int main()
+{
+    printf("ft_strlen: %d\n", ft_strlen("allo"));
+    return 0;
+}*/
+
+int main()
+{
+    unsigned char *s;
+    int x;
+    size_t r = 6;
+    
+    x = 5;
+    ft_memset(s, x, r);
+    return 0;
+}
+
+/*int main(int argc, char **argv)
+{
+    (void)argc;
+    
+    printf("ft_atoi: %d\n", ft_atoi(argv[1]));
+    printf("atoi: %d\n", atoi(argv[1]));
+    return 0;
+}*/
+
+/*int main()
+{
+    int i;
+    char little[50] = "o";
+    char big[50] = "allo yo man";
+    
+    printf("str: %s\n", ft_strnstr(big, little, 4));
+    return (0);
+}*/
+
+/*int main()
+{
+    const char src[100] = "Allo";
+    char dest[100] = "maman";
+    
+    printf("test: %d\n", ft_strlcat(dest, src, 6));
+    return 0;
+}*/
 
 /*int main()
 {
@@ -12,7 +58,7 @@
     return 0;
 }*/
 
-int main()
+/*int main()
 {
     int i1;
     
@@ -22,7 +68,7 @@ int main()
 
     printf("blabla %s\n", ft_strchr((const char *)str1, i1));
     return (0);
-}
+}*/
 
 /*int main()
 {
