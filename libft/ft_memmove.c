@@ -1,5 +1,6 @@
-void *ft_memcpy(void *dest, const void *src, size_t n)
+void *memmove(void *dest, const void *src, size_t n)
 {
+    unsigned char temp;
     unsigned char x;
     unsigned char y;
     int i;
@@ -9,10 +10,11 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
     i = 0;
     while (i < n)
     {
-        y = x;
-        y++;
+        *temp = *x;
+        temp++;
         x++;
         i++;
     }
-    return (dest);
+    y = temp;
+    return (est);
 }

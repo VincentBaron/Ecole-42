@@ -1,4 +1,4 @@
-int  ft_strlcat(char *dst, const char *src, int size)
+size_t  ft_strlcat(char *dst, const char *src, size_t size)
 {
     int i;
     int k;
