@@ -6,6 +6,13 @@
 int main(int argc, char **argv)
 {
     (void)argc;
+    printf("itoa: %s\n", ft_itoa(ft_atoi(argv[1])));
+    return (0);
+}
+
+/*int main(int argc, char **argv)
+{
+    (void)argc;
     char **spliter;
     int i;
     
@@ -17,7 +24,7 @@ int main(int argc, char **argv)
         i++;
     }
     return 0;
-}
+}*/
 
 /*int main(int argc, char **argv)
 {
