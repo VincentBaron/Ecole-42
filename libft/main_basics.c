@@ -3,13 +3,61 @@
 #include "libft.h"
 #include <stdlib.h>
 
+int main(int argc, char **argv)
+{
+    (void)argc;
+    char **spliter;
+    int i;
+    
+    spliter = ft_split(argv[1], *argv[2]);
+    i = 0;
+    while (spliter[i])
+    {
+        printf("split: %s\n", spliter[i]);
+        i++;
+    }
+    return 0;
+}
+
+/*int main(int argc, char **argv)
+{
+    (void)argc;
+    
+    printf("trim: %s\n", ft_strtrim(argv[1], argv[2]));
+    return 0;
+}*/
+
+/*int main(int argc, char **argv)
+{
+    (void)argc;
+    
+    printf("join: %s\n", ft_strjoin(argv[1], argv[2]));
+    return 0;
+}*/
+
+/*int main(int argc, char **argv)
+{
+    (void)argc;
+    
+    printf("substract: %s\n", ft_substr(argv[1], ft_atoi(argv[2]), ft_atoi(argv[3])));
+    return 0;
+}*/
+
+/*int main(int argc, char **argv)
+{
+    (void)argc;
+    
+    printf("duplicate: %s\n", ft_strdup(argv[1]));
+    return 0;
+}*/
+
 /*int main()
 {
     printf("ft_strlen: %d\n", ft_strlen("allo"));
     return 0;
 }*/
 
-int main()
+/*int main()
 {
     unsigned char *s;
     int x;
@@ -18,7 +66,7 @@ int main()
     x = 5;
     ft_memset(s, x, r);
     return 0;
-}
+}*/
 
 /*int main(int argc, char **argv)
 {
