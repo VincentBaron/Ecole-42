@@ -34,7 +34,7 @@ void ft_putnbr(int x)
 {
     char num;
     
-    printf("x: %d\n", x);
+    //printf("x: %d\n", x);
     if (x >= 10)
         ft_putnbr(x / 10);
     num = x % 10 + 48;
@@ -44,31 +44,43 @@ void ft_putnbr(int x)
 int main(int argc, char **argv)
 {
     char *errormssg1;
-    int x;
+    char *errormssg2;
     
     int (*doop[5])(int x, int y) = {plus, minus, times, divi, mod};
     
-    errormssg1 = "Error: Wrong amount of arguments";
+    errormssg1 = "Stop : division by zero";
+    errormssg2 = "Stop : modulo by zero";
     if (argc != 4)
     {
-        write(1, errormssg1, ft_strlen(errormssg1));
+        return (0);
+    }
+    if (*argv[2] != '+' || *argv[2] != '-' || *argv[2] != '*' || *argv[2] != '/' || *argv[2] != '%')
+    {
+        write(1, "0", 1);
         return (0);
     }
     else
     {
-        if (argv[2] == "+")
-        {
-            x = (doop[0])(ft_atoi(argv[1]), ft_atoi(argv[3]));
-            ft_putnbr(x);
-        }
-        if (argv[2] == "-")
+        if (*argv[2] == '+')
+            ft_putnbr((doop[0])(ft_atoi(argv[1]), ft_atoi(argv[3])));
+        if (*argv[2] == '-')
             ft_putnbr((doop[1])(ft_atoi(argv[1]), ft_atoi(argv[3])));
-        if (argv[2] == "*")
+        if (*argv[2] == '*')
             ft_putnbr((doop[2])(ft_atoi(argv[1]), ft_atoi(argv[3])));
-        if (argv[2] == "/")
-            ft_putnbr((doop[3])(ft_atoi(argv[1]), ft_atoi(argv[3])));
-        if (argv[2] == "%")
-            ft_putnbr((doop[4])(ft_atoi(argv[1]), ft_atoi(argv[3])));
+        if (*argv[2] == '/')
+        {
+            if (ft_atoi(argv[3]) == 0)
+                write(1, errormssg1, ft_strlen(errormssg1));
+            else
+                ft_putnbr((doop[3])(ft_atoi(argv[1]), ft_atoi(argv[3])));
+        }
+        if (*argv[2] == '%')
+         {
+            if (ft_atoi(argv[3]) == 0)
+                write(1, errormssg2, ft_strlen(errormssg2));
+            else
+                ft_putnbr((doop[4])(ft_atoi(argv[1]), ft_atoi(argv[3])));
+        }
     }
     return (0);
 }
