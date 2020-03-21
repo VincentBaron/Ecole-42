@@ -3,12 +3,25 @@
 #include "libft.h"
 #include <stdlib.h>
 
+char fd(int x, char c)
+{
+    return (c + x);
+}
+
 int main(int argc, char **argv)
+{
+    (void)argc;
+    
+    printf("strmapi: %s\n", ft_strmapi(argv[1], &fd));
+    return (0);
+}
+
+/*int main(int argc, char **argv)
 {
     (void)argc;
     printf("itoa: %s\n", ft_itoa(ft_atoi(argv[1])));
     return (0);
-}
+}*/
 
 /*int main(int argc, char **argv)
 {

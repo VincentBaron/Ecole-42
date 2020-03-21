@@ -1,16 +1,20 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int *ft_map(int *tab, int length, int (*f)(int))
 {
     int i;
+    int *tabretour;
     
+    if(!(tabretour = (int *)malloc(sizeof(int) * (length))))
+        return (0);
     i = 0;
     while (i < length)
     {
-        tab[i] = (*f)(tab[i]);
+        tabretour[i] = (*f)(tab[i]);
         i++;
     }
-    return (tab);
+    return (tabretour);
 }
 
 int fd(int x)
@@ -22,15 +26,15 @@ int fd(int x)
 int main()
 {
     int i;
-
+    int *tabretour;
     int tabx[4] = {1, 2, 3, 4};
     
-    tabx = ft_map(tabx, 4, &fd);
+    tabretour = ft_map(tabx, 4, &fd);
     
     i = 0;
     while (i < 4)
     {
-        printf("tab[%d]: %d\n", i, tabx[i]);
+        printf("tab[%d]: %d\n", i, tabretour[i]);
         i++;
     }
     return 0;
