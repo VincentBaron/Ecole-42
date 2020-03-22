@@ -17,7 +17,7 @@ int minus(int x, int y)
 
 int times(int x, int y)
 {
-    return (x - y);
+    return (x * y);
 }
 
 int divi(int x, int y)
@@ -34,7 +34,11 @@ void ft_putnbr(int x)
 {
     char num;
     
-    //printf("x: %d\n", x);
+    if (x < 0)
+    {    
+        x *= -1;
+        write(1, "-", 1);
+    }
     if (x >= 10)
         ft_putnbr(x / 10);
     num = x % 10 + 48;
@@ -54,7 +58,7 @@ int main(int argc, char **argv)
     {
         return (0);
     }
-    if (*argv[2] != '+' || *argv[2] != '-' || *argv[2] != '*' || *argv[2] != '/' || *argv[2] != '%')
+    if (*argv[2] != '+' && *argv[2] != '-' && *argv[2] != '*' && *argv[2] != '/' && *argv[2] != '%')
     {
         write(1, "0", 1);
         return (0);

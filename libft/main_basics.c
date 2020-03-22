@@ -3,7 +3,31 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char fd(int x, char c)
+int main(int argc, char **argv)
+{
+    (void)argc;
+    t_list *list;
+    t_list *listlast;
+    int i;
+    
+    list = ft_lstnew(argv[1]);
+    ft_lstadd_front(&list, ft_lstnew(argv[2]));
+    ft_lstadd_back(&list, ft_lstnew(argv[3]));
+    listlast = ft_lstlast(list);
+    printf("List size: %d\n", ft_lstsize(list));
+    i = 1;
+    while(list->next != 0)
+    {
+        printf("content%d: %s\n", i, (char *)list->content);
+        list = list->next;
+        i++;
+    }
+    printf("content%d: %s\n", i, (char *)list->content);
+    printf ("list last: %s\n", (char *)listlast->content);
+    return (0);
+}
+
+/*char fd(unsigned int x, char c)
 {
     return (c + x);
 }
@@ -14,7 +38,7 @@ int main(int argc, char **argv)
     
     printf("strmapi: %s\n", ft_strmapi(argv[1], &fd));
     return (0);
-}
+}*/
 
 /*int main(int argc, char **argv)
 {
