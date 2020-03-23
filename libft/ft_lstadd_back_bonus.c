@@ -2,14 +2,19 @@
 
 void ft_lstadd_back(t_list **alst, t_list *new)
 {
-    while ((*alst)->next != 0)
-        *alst = (*alst)->next;
-    (*alst)->next = new;
+    if (*alst != 0)
+    {
+	    while ((*alst)->next != 0)
+	        *alst = (*alst)->next;
+	    (*alst)->next = new;
+    }
+    else
+    	*alst = new;
 }
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **alst, t_list *new)
+/*void	ft_lstadd_back(t_list **alst, t_list *new)
 {
 	t_list *lst;
 
@@ -22,4 +27,4 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 	}
 	else
 		*alst = new;
-}
+}*/

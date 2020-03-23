@@ -5,25 +5,28 @@
 
 int main(int argc, char **argv)
 {
-    (void)argc;
     t_list *list;
-    t_list *listlast;
     int i;
     
-    list = ft_lstnew(argv[1]);
-    ft_lstadd_front(&list, ft_lstnew(argv[2]));
-    ft_lstadd_back(&list, ft_lstnew(argv[3]));
-    listlast = ft_lstlast(list);
-    printf("List size: %d\n", ft_lstsize(list));
+   // list = ft_lstnew(argv[1]);
+   // ft_lstadd_front(&list, ft_lstnew(argv[2]));
+   i = 1;
+   printf("yolo");
+   while (i < argc)
+   {
+        ft_lstadd_back(&list, ft_lstnew(argv[i]));
+        i++;
+   }
+    //listlast = ft_lstlast(list);
+    //printf("List size: %d\n", ft_lstsize(list));
     i = 1;
-    while(list->next != 0)
+    while(list != NULL)
     {
         printf("content%d: %s\n", i, (char *)list->content);
         list = list->next;
         i++;
     }
-    printf("content%d: %s\n", i, (char *)list->content);
-    printf ("list last: %s\n", (char *)listlast->content);
+    //printf ("list last: %s\n", (char *)listlast->content);
     return (0);
 }
 
