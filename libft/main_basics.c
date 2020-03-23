@@ -3,27 +3,49 @@
 #include "libft.h"
 #include <stdlib.h>
 
+t_list  *ft_finish(void *x)
+{
+    t_list *y;
+    
+    y = x;
+    y->content = "finnish";
+    return (x);
+}
+
+/*void    ft_delete(void *str)
+{
+    char *stx;
+    
+    stx = str;
+    *stx = '\0';
+}*/
+
 int main(int argc, char **argv)
 {
     t_list *list;
     int i;
-    
-   // list = ft_lstnew(argv[1]);
+    t_list *head;
+    t_list *dup;
    // ft_lstadd_front(&list, ft_lstnew(argv[2]));
    i = 1;
-   printf("yolo");
+   list = ft_lstnew(argv[i]);
+   i++;
+   head = list;
    while (i < argc)
    {
-        ft_lstadd_back(&list, ft_lstnew(argv[i]));
+        ft_lstadd_back(&head, ft_lstnew(argv[i]));
         i++;
    }
+   head = list;
+  // printf()
     //listlast = ft_lstlast(list);
     //printf("List size: %d\n", ft_lstsize(list));
+    dup = ft_lstmap((head), &ft_finish);
     i = 1;
-    while(list != NULL)
+    while(dup != 0)
     {
-        printf("content%d: %s\n", i, (char *)list->content);
-        list = list->next;
+        printf("content%d: %s\n", i, (char *)dup->content);
+        dup = dup->next;
         i++;
     }
     //printf ("list last: %s\n", (char *)listlast->content);
