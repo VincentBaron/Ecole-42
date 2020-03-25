@@ -1,8 +1,10 @@
+#include "libft.h"
+
 char *ft_strnstr(const char	*big, const char *little, size_t len)
 {
     int i;
     int f;
-    int k;
+     unsigned int k;
     
     i = 0;
     if (little[0] == '\0')

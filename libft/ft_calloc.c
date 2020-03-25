@@ -1,11 +1,11 @@
 #include "libft.h"
 
-void *calloc(int nmemb, int size)
+void *ft_calloc(int nmemb, int size)
 {
-    int i;
+    void *array;
     
-    if(!(array = malloc(nmemb * size)))
+    if(!(array = (void *)malloc(nmemb * size)))
         return (0);
-    array = ft_bzero(array, size * nmemb)
-    return (array);
+    ft_bzero(array, (size * nmemb));
+    return ((void *)array);
 }

@@ -1,10 +1,12 @@
+#include "libft.h"
+
 void *memccpy(void *dest, const void *src, int c, size_t n)
 {
      unsigned char *x;
      unsigned char *y;
-     int i;
+     unsigned int i;
      
-     x = src;
+     x = (unsigned char *)src;
      y = dest;
      i = 0;
      while (*x != c && i < n)
@@ -15,7 +17,7 @@ void *memccpy(void *dest, const void *src, int c, size_t n)
          i++;
          
      }
-     if (*x != *c)
+     if (*x != c)
         return (0);
     else
         return (y + 1);
