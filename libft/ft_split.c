@@ -4,6 +4,7 @@ int split_size(char const *s, char c)
 {
     int element;
     
+    element = 0;
     while (*s)
     {
         while (*s == c && *s)
@@ -23,6 +24,7 @@ char *alloc_array(char const *s, char c)
     int i;
     char *array;
     
+    i = 0;
     while (s[i] != c && s[i])
         i++;
     if (!(array = (char *)malloc(sizeof(char) * (i + 1))))
