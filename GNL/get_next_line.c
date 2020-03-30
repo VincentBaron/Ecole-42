@@ -2,34 +2,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-
-char *ft_strjoin(char *buffer, char *temp)
-{
-    int i;
-    int tempnew;
-    
-    i = 0;
-    if (temp == NULL)
-        return buffer;
-    if (!(tempnew = (char *)malloc(sizeof(char) * (ft_strlen(buffer) + ft_strlen(temp) + 1))))
-        return (NULL);
-    while (*temp && *tempnew)
-    {
-        *tempnew = *temp;
-        tempnew++;
-        temp++;
-    }
-    while (*buffer && *tempnew)
-    {
-        *tempnew = *buffer;
-        tempnew++;
-        buffer++;
-    }
-    *tempnew = '\0';
-    return (tempnew);
-}
+#include "get_next_line.h"
 
 int check_end_of_line(char *buf)
 {
@@ -52,6 +25,7 @@ int check_end_of_line(char *buf)
 int get_next_line(int fd, char **line)
 {
     int ret;
+    int x;
     char buffer[BUFFER_SIZE + 1];
     char *temp;
     
@@ -60,7 +34,14 @@ int get_next_line(int fd, char **line)
     {
         buffer[ret] = '\0';
         temp = ft_strjoin(buffer, temp);
+        if ((x = check_end_of_line(temp)) != 0)
+        {
+            ret = 1;
+            break;
+        }
     }
+    *line = ft_strndup(temp, x);
+    return (ret);
 }
 
 int main()
@@ -74,8 +55,7 @@ int main()
         printf ("error open");
         return 1;
     }
-    while (get_next_line(fd, &line) != 0)
-        printf ("%s\n", *line);
-    printf("FD : %d\n", fd);
+    get_next_line(fd, &line);
+    printf("line 1: %s\n", line);
     return 0;
 }

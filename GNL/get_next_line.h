@@ -6,5 +6,6 @@
 
 char *ft_strjoin(char *buffer, char *temp);
 size_t  ft_strlen(const char *s);
+char *ft_strndup(char *temp, int n);
 
 #endif
