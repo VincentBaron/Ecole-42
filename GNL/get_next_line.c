@@ -4,18 +4,18 @@
 
 #include "get_next_line.h"
 
-int check_end_of_line(char *buf)
+int check_end_of_line(char *temp)
 {
     int i;
     
     i = 0;
-    while (buf[i])
+    while (temp[i])
     {
-        if (buf[i] == '\n')
+        if (temp[i] == '\n')
             break;
         i++;
     }
-    if (buf[i] == '\0')
+    if (temp[i] == '\0')
         return (0);
     return (i);
 }
@@ -33,13 +33,18 @@ int get_next_line(int fd, char **line)
     while ((ret = read(fd, buffer, BUFFER_SIZE)) > 0)
     {
         buffer[ret] = '\0';
+        printf("buffer 1: %s\n", buffer);
+       printf("temp 1: %s\n", temp);
         temp = ft_strjoin(buffer, temp);
+        printf ("buffer 2: %s\n", buffer);
+        printf("temp 2: %s\n", temp);
         if ((x = check_end_of_line(temp)) != 0)
         {
             ret = 1;
             break;
         }
     }
+   // printf("temp 1: %s\n", temp);
     *line = ft_strndup(temp, x);
     return (ret);
 }
