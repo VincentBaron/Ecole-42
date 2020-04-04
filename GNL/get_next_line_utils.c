@@ -27,8 +27,26 @@ char *ft_strndup(char *temp, int n)
         i++;
     }
     line[i] = '\0';
-    free(temp);
+    //free(temp);
     return (line);
+}
+
+char *ft_substr(char *temp, int x)
+{
+    char *tempx;
+    int i;
+    
+    if(!(tempx = (char *)malloc(sizeof(char) * (x + 1))))
+        return (NULL);
+    i = 0;
+    while (temp[x] != '\0')
+    {
+        tempx[i] = temp[x];
+        i++;
+        x++;
+    }
+    tempx[i] = '\0';
+    return (tempx);
 }
 
 char *ft_strjoin(char *buffer, char *temp)
@@ -40,7 +58,10 @@ char *ft_strjoin(char *buffer, char *temp)
     //printf("temp: %s\n", temp);
     
     if (temp == NULL)
-        return buffer;
+    {
+        tempnew = ft_strndup(buffer, ft_strlen(buffer));
+        return (tempnew);
+    }
     if (!(tempnew = (char *)malloc(sizeof(char) * (ft_strlen(buffer) + ft_strlen(temp) + 1))))
         return (NULL);
     ptempnew = tempnew;

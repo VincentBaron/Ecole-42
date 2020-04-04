@@ -9,6 +9,7 @@ int check_end_of_line(char *temp)
     int i;
     
     i = 0;
+    //printf ("temp check_end: %s\n", temp);
     while (temp[i])
     {
         if (temp[i] == '\n')
@@ -28,16 +29,21 @@ int get_next_line(int fd, char **line)
     int x;
     char buffer[BUFFER_SIZE + 1];
     char *temp;
+    char *tempx;
     
+    
+    //free(tempx);
     temp = NULL;
+    if (*tempx)
+        temp = ft_strndup(tempx, ft_strlen(tempx));
     while ((ret = read(fd, buffer, BUFFER_SIZE)) > 0)
     {
         buffer[ret] = '\0';
-        printf("buffer 1: %s\n", buffer);
-       printf("temp 1: %s\n", temp);
+        //printf("buffer 1: %s\n", buffer);
+       //printf("temp 1: %s\n", temp);
         temp = ft_strjoin(buffer, temp);
-        printf ("buffer 2: %s\n", buffer);
-        printf("temp 2: %s\n", temp);
+        //printf ("buffer 2: %s\n", buffer);
+        //printf("temp 2: %s\n", temp);
         if ((x = check_end_of_line(temp)) != 0)
         {
             ret = 1;
@@ -46,6 +52,8 @@ int get_next_line(int fd, char **line)
     }
    // printf("temp 1: %s\n", temp);
     *line = ft_strndup(temp, x);
+    tempx = ft_substr(temp, x);
+    free(temp);
     return (ret);
 }
 
@@ -60,7 +68,9 @@ int main()
         printf ("error open");
         return 1;
     }
-    get_next_line(fd, &line);
-    printf("line 1: %s\n", line);
+    while (get_next_line(fd, &line) != 0)
+    {    
+        printf("%s\n", line);
+    }
     return 0;
 }
