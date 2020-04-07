@@ -2,8 +2,13 @@
 
 size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {
-    unsigned int i;
+    size_t i;
+    size_t j;
 
+    while (src[j])
+        j++;
+    if (size == 0)
+        return (j); 
     i = 0;
     while (i < (size - 1) && src[i])
     {
