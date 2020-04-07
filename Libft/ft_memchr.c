@@ -15,5 +15,5 @@ void *ft_memchr(const void *s, int c, size_t n)
     if (*x != c)
         return (0);
     else
-        return (x);
+        return ((unsigned char *)x);
 }
