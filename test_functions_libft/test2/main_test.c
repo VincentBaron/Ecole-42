@@ -1,14 +1,34 @@
 # include "libft.h"
 # include <string.h>
 
-// ft_strncmp
+// ft_strdup
 
 int main(int argc, char **argv)
+{
+    (void)argc;
+    printf("ft_strdup: %s\n", ft_strdup(argv[1]));
+    printf("strdup: %s\n", strdup(argv[1]));
+    return 0;
+}
+
+// ft_atoi
+
+/*int main(int argc, char **argv)
+{
+    (void)argc;
+    printf("ft_atoi: %d\n", ft_atoi(argv[1]));
+    printf("atoi: %d\n", atoi(argv[1]));
+    return 0;
+}*/
+
+// ft_strncmp
+
+/*int main(int argc, char **argv)
 {
     printf("ft_strlcpy: %d\n", (int)ft_strlcpy(argv[1], argv[2], atoi(argv[argc - 1])));
     //printf("strlcpy: %d\n", strlcpy(argv[1], argv[2], atoi(argv[argc - 1])));
     return 0;
-}
+}*/
 
 // ft_strncmp
 

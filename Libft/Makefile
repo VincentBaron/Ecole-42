@@ -60,7 +60,7 @@ OBJS		= 	${SRC:.c=.o}
 OBJS_B		=	${SRC_BONUS:.c=.o}
 
 #	Output
-NAME		= 	libft.a
+NAME			= 	libft.a
 
 #	Compiler
 CFLAGS		=	-Werror -Wall -Wextra
