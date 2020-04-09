@@ -1,6 +1,15 @@
 # include "libft.h"
-# include <strings.h>
+# include <string.h>
 
+// ft_strdup
+
+/*int main(int argc, char **argv)
+{
+    (void)argc;
+    printf("ft_strdup: %s\n", ft_strdup(argv[1]));
+    printf("strdup: %s\n", strdup(argv[1]));
+    return 0;
+}*/
 
 // ft_atoi
 
@@ -12,16 +21,38 @@
     return 0;
 }*/
 
-// ft_strlcpy
+// ft_strnstr
 
-size_t	strlcpy_test(char *dst, const char *src, size_t size);
+/*size_t	strlcat_test(char *dst, const char *src, size_t size);
 
 int main(int argc, char **argv)
 {
-    printf("ft_strlcpy: %d\n", ft_strlcpy(argv[1], argv[2], atoi(argv[argc - 1])));
-    printf("strlcpy_test: %d\n", strlcpy_test(argv[1], argv[2], atoi(argv[argc - 1])));
+    printf("ft_strlcat: %d\n", (int)ft_strlcat(argv[1], argv[2], atoi(argv[argc - 1])));
+    printf("strlcat_test: %d\n", (int)strlcat_test(argv[1], argv[2], atoi(argv[argc - 1])));
+    return 0;
+}*/
+
+// ft_strlcat
+
+size_t	strlcat_test(char *dst, const char *src, size_t size);
+
+int main(int argc, char **argv)
+{
+   printf("ft_strlcat: %d\n", (int)ft_strlcat(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
+    printf("strlcat_test: %d\n", (int)strlcat_test(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
     return 0;
 }
+
+// ft_strlcpy
+
+/*size_t	strlcpy_test(char *dst, const char *src, size_t size);
+
+int main(int argc, char **argv)
+{
+    printf("ft_strlcpy: %d\n", (int)ft_strlcpy(argv[1], argv[2], atoi(argv[argc - 1])));
+    printf("strlcpy_test: %d\n", (int)strlcpy_test(argv[1], argv[2], atoi(argv[argc - 1])));
+    return 0;
+}*/
 
 // ft_strncmp
 

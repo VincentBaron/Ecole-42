@@ -2,25 +2,27 @@
 
 size_t  ft_strlcat(char *dst, const char *src, size_t size)
 {
-    unsigned int i;
-    int k;
+    unsigned int f;
     
-    i = 0;
-    k = 0;
-    while (dst[i])
+    f = ft_strlen(dst);
+    printf ("total size: %d\n", (int)(ft_strlen(src) + ft_strlen(dst)));
+    if (size > ft_strlen(dst) + ft_strlen(src))
     {
-        i++;
-        k++;
+        while (*src)
+        {
+            dst[f] = *src;
+            f++;
+            src++;
+        }
+        dst[f] = '\0';
+        printf ("dest1: %s\n", dst);
+        return (ft_strlen(dst) + ft_strlen(src));
     }
-    i = 0;
-    while (src[i] && i < size)
+    else
     {
-        dst[k] = src[i];
-        k++;
-        i++;
+        printf("dest2: %s\n", dst);
+        return (size + ft_strlen(src));
     }
-    dst[k] = '\0';
-    return (k);
 }
 
 
