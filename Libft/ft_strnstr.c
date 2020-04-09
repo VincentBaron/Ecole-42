@@ -9,21 +9,22 @@ char *ft_strnstr(const char	*big, const char *little, size_t len)
     i = 0;
     if (little[0] == '\0')
         return ((char *)big);
-    while (big[i])
+    while (big[i] && len > 0)
     {
         k = 0;
-        if (big[i] == little[k])
+        if (big[i] == little[k] && big[i])
         {
             f = i;
-            while (big[f] == little[k])
-            {    
+            while (big[f] == little[k] && big[f])
+            {
                 k++;
                 f++;
             }
-            if (little[k] == '\0' || k >= len)
-                return ((char *)&big[i]);
         }
+        if(k == ft_strlen(little))
+            return ((char *)&big[i]);
         i++;
+        len--;
     }
     return (0);
 }

@@ -23,25 +23,25 @@
 
 // ft_strnstr
 
-/*size_t	strlcat_test(char *dst, const char *src, size_t size);
+char	*strnstr_test(const char *haystack, const char *needle, size_t len);
 
 int main(int argc, char **argv)
 {
-    printf("ft_strlcat: %d\n", (int)ft_strlcat(argv[1], argv[2], atoi(argv[argc - 1])));
-    printf("strlcat_test: %d\n", (int)strlcat_test(argv[1], argv[2], atoi(argv[argc - 1])));
+    printf("ft_strnstr: %s\n", ft_strnstr(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
+    printf("strnstr_test: %s\n", strnstr_test(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
     return 0;
-}*/
+}
 
 // ft_strlcat
 
-size_t	strlcat_test(char *dst, const char *src, size_t size);
+/*size_t	strlcat_test(char *dst, const char *src, size_t size);
 
 int main(int argc, char **argv)
 {
    printf("ft_strlcat: %d\n", (int)ft_strlcat(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
     printf("strlcat_test: %d\n", (int)strlcat_test(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
     return 0;
-}
+}*/
 
 // ft_strlcpy
 
