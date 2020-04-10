@@ -1,6 +1,41 @@
 # include "libft.h"
 # include <string.h>
 
+// ft_itoa
+
+char	*itoa_test(int nb);
+
+int main(int argc, char **argv)
+{
+   (void)argc;
+    printf("ft_itoa: %s\n", ft_itoa(atoi(argv[1])));
+    printf("itoa_test: %s\n", itoa_test(atoi(argv[1])));
+    return 0;
+}
+
+// ft_strnstr
+
+/*char	*strtrim_test(const char *s1, char const *set);
+
+int main(int argc, char **argv)
+{
+   (void)argc;
+    printf("ft_strtrim: %s\n", ft_strtrim(strdup(argv[1]), strdup(argv[2])));
+    printf("strtrim_test: %s\n", strtrim_test(strdup(argv[1]), strdup(argv[2])));
+    return 0;
+}*/
+
+// ft_substr
+
+/*char		*substr_test(char const *s, unsigned int start, size_t len);
+
+int main(int argc, char **argv)
+{
+    printf("ft_substr: %s\n", ft_substr(strdup(argv[1]), atoi(argv[2]), atoi(argv[argc - 1])));
+    printf("substr_test: %s\n", substr_test(strdup(argv[1]), atoi(argv[2]), atoi(argv[argc - 1])));
+    return 0;
+}*/
+
 // ft_strdup
 
 /*int main(int argc, char **argv)
@@ -23,14 +58,14 @@
 
 // ft_strnstr
 
-char	*strnstr_test(const char *haystack, const char *needle, size_t len);
+/*char	*strnstr_test(const char *haystack, const char *needle, size_t len);
 
 int main(int argc, char **argv)
 {
     printf("ft_strnstr: %s\n", ft_strnstr(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
     printf("strnstr_test: %s\n", strnstr_test(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
     return 0;
-}
+}*/
 
 // ft_strlcat
 

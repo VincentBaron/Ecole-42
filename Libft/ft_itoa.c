@@ -31,6 +31,10 @@ char    *ft_itoa(int n)
     int size;
     char *itoa;
     
+    if (!n)
+        return ("0");
+    if (n == -2147483648)
+        return ("-2147483648");
     nbx = n;
     size = 0;
     if (nbx < 0)

@@ -57,4 +57,7 @@ void    ft_lstclear(t_list **lst, void (*del)(void *));
 void    ft_lstiter(t_list *lst, void (*f)(void *));
 t_list  *ft_lstmap(t_list *lst, t_list *(*f)(void *));
 
+char    *ft_strndup(char *temp, int n);
+int     check_charset(char c, char const *set);
+
 # endif

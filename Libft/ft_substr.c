@@ -10,7 +10,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     i = 0;
     while (i < len)
     {
-        sub[i] = s[start - 1];
+        sub[i] = s[start];
         i++;
         start++;
     }
