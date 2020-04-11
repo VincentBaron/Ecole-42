@@ -2,9 +2,9 @@
 
 t_list *ft_lstlast(t_list *lst)
 {
-    while ((*lst).next != 0)
-    {
+    if (!lst)
+        return ((t_list *)0);
+    while (lst->next != NULL)
         lst = lst->next;
-    }
     return (lst);
 }

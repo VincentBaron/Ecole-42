@@ -1,5 +1,34 @@
 #include "libft.h"
 
+#include "libft.h"
+
+int check_charset(char c, char const *set)
+{
+    while (*set)
+    {
+        if (*set == c)
+            return (1);
+        set++;
+    }
+    return (0);
+}
+
+char *ft_strndup(char *temp, int n)
+{
+    char *line;
+    int i;
+    if(!(line = (char *)malloc(sizeof(char) * (n + 1))))
+        return (NULL);
+    i = 0;
+    while (i < n)
+    {
+        line[i] = temp[i];
+        i++;
+    }
+    line[i] = '\0';
+    return (line);
+}
+
 char *ft_strtrim(char const *s1, char const *set)
 {
     int i;

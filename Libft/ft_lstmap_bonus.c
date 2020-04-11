@@ -11,7 +11,7 @@ t_list *ft_lstmap(t_list *lst, t_list *(*f)(void *))
     while (lst != 0)
     {
         *head = *lst;
-        (*f)(head);
+        (*f)(head->content);
         head = head->next;
         lst = lst->next;
     }

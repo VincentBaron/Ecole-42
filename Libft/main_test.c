@@ -1,9 +1,57 @@
 # include "libft.h"
 # include <string.h>
 
+// ft_lstsize
+
+t_list  *ft_mapped(void *x)
+{
+    t_list *y;
+    
+    y = x;
+    y->content = "finnish";
+    return (x);
+}
+
+int main(int argc, char **argv)
+{
+    t_list *list;
+    //t_list *last;
+    t_list *map;
+    int i;
+    
+    i = 1;
+    list = NULL;
+    while (i < argc)
+    {
+        ft_lstadd_back(&list, ft_lstnew(argv[i]));
+        i++;
+    }
+    //printf("%s\n", (char *)list->content);
+   //printf("lstsize list: %d\n", ft_lstsize(list));
+   //last = ft_lstlast(list);
+   //printf("lst_last: %s\n", (char *)last->content);
+   i = 1;
+    while (list != NULL)
+   {
+       printf("(*list).content %d: %s\n", i, (char *)list->content);
+       list = list->next;
+       i++;
+   }
+   map = ft_lstmap(list, &ft_mapped);
+   i = 1;
+    printf("lstsize map: %d\n", ft_lstsize(map));
+   while (map->next != NULL)
+   {
+       printf("(*map).content %d: %s\n", i, (char *)map->content);
+       map = map->next;
+       i++;
+   }
+    return 0;
+}
+
 // ft_itoa
 
-char	*itoa_test(int nb);
+/*char	*itoa_test(int nb);
 
 int main(int argc, char **argv)
 {
@@ -11,7 +59,7 @@ int main(int argc, char **argv)
     printf("ft_itoa: %s\n", ft_itoa(atoi(argv[1])));
     printf("itoa_test: %s\n", itoa_test(atoi(argv[1])));
     return 0;
-}
+}*/
 
 // ft_strnstr
 
