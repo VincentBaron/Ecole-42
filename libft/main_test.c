@@ -166,25 +166,12 @@ int main(int argc, char **argv)
 
 // ft_memcmp
 
-/*int main(int argc, char **argv)
+int main(int argc, char **argv)
 {
     printf("ft_memcmp: %d\n", (int)ft_memcmp(argv[1], argv[2], atoi(argv[argc - 1])));
     printf("memcmp: %d\n", (int)memcmp(argv[1], argv[2], atoi(argv[argc - 1])));
     return 0;
-    
-    char *src;
-    char *dest1;
-    char *dest2;
-    
-    src = NULL;
-    dest1 = NULL;
-    dest2 = NULL;
-    
-    printf("ft_memcpy: %s\n", (char *)ft_memcpy(dest1, src, atoi(argv[argc - 1])));
-    printf("memcpy: %s\n", (char *)memcpy(dest2, src, atoi(argv[argc - 1])));
-    return 0;
-    
-}*/
+}
 
 // ft_memchr
 
@@ -230,14 +217,14 @@ int main(int argc, char **argv)
     
 }*/
 
-// ft_memchr
+/*// ft_memchr
 
 int main(int argc, char **argv)
 {
     printf("ft_memchr: %s\n", (char *)ft_memchr(strdup(argv[1]), atoi(argv[argc - 2]), atoi(argv[argc - 1])));
     printf("memchr: %s\n", (char *)memchr(strdup(argv[1]), atoi(argv[argc - 2]), atoi(argv[argc - 1])));
     return 0;
-}
+}*/
 
 /*// ft_memccpy
 
