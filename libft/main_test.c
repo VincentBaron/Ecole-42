@@ -118,7 +118,7 @@ int main(int argc, char **argv)
 
 // ft_strlcat
 
-int main(int argc, char **argv)
+/*int main(int argc, char **argv)
 {
     char *dest;
     char *dest1;
@@ -131,7 +131,7 @@ int main(int argc, char **argv)
     printf("strlcat_ts: %d\n", (int)strlcat(dest1, strdup(argv[2]), atoi(argv[argc - 1])));
     printf("dest2: %s", dest1);
     return 0;
-}
+}*/
 
 // ft_strlcpy
 
@@ -171,14 +171,14 @@ int main(int argc, char **argv)
     return 0;
 }*/
 
-/*// ft_memmove
+// ft_memmove
 
 int main(int argc, char **argv)
 {
     printf("ft_memmove: %s\n", ft_memmove(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
     printf("memmove: %s\n", memmove(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
     return 0;
-}*/
+}
 
 // ft_memcmp
 
