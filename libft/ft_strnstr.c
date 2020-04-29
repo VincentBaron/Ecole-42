@@ -32,4 +32,8 @@ char *ft_strnstr(const char	*big, const char *little, size_t len)
         i++;
     }
     return (NULL);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> fe421041d979ef426ac1136db1a82bb9e2cce2dc
