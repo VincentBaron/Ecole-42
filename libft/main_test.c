@@ -1,5 +1,6 @@
 # include "libft.h"
 # include <string.h>
+#include <bsd/string.h>
 
 /*// ft_lstsize
 
@@ -117,14 +118,20 @@ int main(int argc, char **argv)
 
 // ft_strlcat
 
-/*size_t	strlcat_test(char *dst, const char *src, size_t size);
-
 int main(int argc, char **argv)
 {
-   printf("ft_strlcat: %d\n", (int)ft_strlcat(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
-    printf("strlcat_test: %d\n", (int)strlcat_test(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
+    char *dest;
+    char *dest1;
+
+    dest = strdup(argv[1]);
+    dest1 = strdup(argv[1]);
+   
+    printf("ft_strlcat: %d\n", (int)ft_strlcat(dest, strdup(argv[2]), atoi(argv[argc - 1])));
+    printf("dest1: %s\n", dest);
+    printf("strlcat_ts: %d\n", (int)strlcat(dest1, strdup(argv[2]), atoi(argv[argc - 1])));
+    printf("dest2: %s", dest1);
     return 0;
-}*/
+}
 
 // ft_strlcpy
 
@@ -164,14 +171,23 @@ int main(int argc, char **argv)
     return 0;
 }*/
 
-// ft_memcmp
+/*// ft_memmove
 
 int main(int argc, char **argv)
+{
+    printf("ft_memmove: %s\n", ft_memmove(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
+    printf("memmove: %s\n", memmove(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
+    return 0;
+}*/
+
+// ft_memcmp
+
+/*int main(int argc, char **argv)
 {
     printf("ft_memcmp: %d\n", (int)ft_memcmp(argv[1], argv[2], atoi(argv[argc - 1])));
     printf("memcmp: %d\n", (int)memcmp(argv[1], argv[2], atoi(argv[argc - 1])));
     return 0;
-}
+}*/
 
 // ft_memchr
 
