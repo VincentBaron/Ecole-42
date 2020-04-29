@@ -6,7 +6,7 @@
 /*   By: vbaron <vincentbaron1996@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:16:14 by vbaron            #+#    #+#             */
-/*   Updated: 2020/04/27 13:16:15 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/04/30 00:58:52 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,15 @@
 
 char *ft_strrchr(const char *s, int c)
 {
-    int i;
+    size_t len;
     
-    i = 0;
-    while (s[i])
-        i++;
-    i -= 1;
-    while (s[i])
+    len = ft_strlen(s);
+    if (c == '\0')
+        return ((char *)&s[len]);
+    while (len--)
     {
-        if (s[i] == c)
-            break;
-        i--;
+        if (s[len] == c)
+            return ((char *)&s[len]);
     }
-    if (s[i] != c)
-        return (NULL);
-    else
-        return ((char *)&(s[i]));
+    return (NULL);
 }

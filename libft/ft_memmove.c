@@ -6,7 +6,7 @@
 /*   By: vbaron <vincentbaron1996@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:14:06 by vbaron            #+#    #+#             */
-/*   Updated: 2020/04/29 20:36:41 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/04/29 21:04:08 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ void *ft_memmove(void *dest, const void *src, size_t n)
     i = 0;
     if (src < dest)
     {
-        while (n--)
+        while (n)
         {
+            n--;
             ((char *)dest)[n] = ((char *)src)[n];
         }
     }

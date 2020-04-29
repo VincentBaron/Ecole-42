@@ -107,12 +107,10 @@ int main(int argc, char **argv)
 
 // ft_strnstr
 
-/*char	*strnstr_test(const char *haystack, const char *needle, size_t len);
-
-int main(int argc, char **argv)
+/*int main(int argc, char **argv)
 {
     printf("ft_strnstr: %s\n", ft_strnstr(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
-    printf("strnstr_test: %s\n", strnstr_test(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
+    printf("strnstr: %s\n", strnstr(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
     return 0;
 }*/
 
@@ -135,12 +133,18 @@ int main(int argc, char **argv)
 
 // ft_strlcpy
 
-/*size_t	strlcpy_test(char *dst, const char *src, size_t size);
-
-int main(int argc, char **argv)
+/*int main(int argc, char **argv)
 {
-    printf("ft_strlcpy: %d\n", (int)ft_strlcpy(argv[1], argv[2], atoi(argv[argc - 1])));
-    printf("strlcpy_test: %d\n", (int)strlcpy_test(argv[1], argv[2], atoi(argv[argc - 1])));
+    char *dest;
+    char *dest1;
+
+    dest = strdup(argv[1]);
+    dest1 = strdup(argv[1]);
+   
+    printf("ft_strlcpy: %d\n", (int)ft_strlcpy(dest, strdup(argv[2]), atoi(argv[argc - 1])));
+    printf("dest1: %s\n", dest);
+    printf("strlcpy_ts: %d\n", (int)strlcpy(dest1, strdup(argv[2]), atoi(argv[argc - 1])));
+    printf("dest2: %s", dest1);
     return 0;
 }*/
 
@@ -153,14 +157,14 @@ int main(int argc, char **argv)
     return 0;
 }*/
 
-// ft_strchr
+// ft_strrchr
 
-/*int main(int argc, char **argv)
+int main(int argc, char **argv)
 {
     printf("ft_strrchr: %s\n", ft_strrchr(argv[1], atoi(argv[argc - 1])));
     printf("strrchr: %s\n", strrchr(argv[1], atoi(argv[argc - 1])));
     return 0;
-}*/
+}
 
 // ft_strchr
 
@@ -173,12 +177,12 @@ int main(int argc, char **argv)
 
 // ft_memmove
 
-int main(int argc, char **argv)
+/*int main(int argc, char **argv)
 {
     printf("ft_memmove: %s\n", ft_memmove(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
     printf("memmove: %s\n", memmove(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
     return 0;
-}
+}*/
 
 // ft_memcmp
 
