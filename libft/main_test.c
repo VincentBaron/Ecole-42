@@ -2,13 +2,13 @@
 # include <string.h>
 #include <bsd/string.h>
 
-/*// ft_lstsize
+// ft_lstsize
 
-t_list  *ft_mapped(void *x)
+t_list  *ft_finnish(void *x)
 {
     t_list *y;
     
-    y = x;
+    y = (t_list *)x;
     y->content = "finnish";
     return (x);
 }
@@ -16,7 +16,7 @@ t_list  *ft_mapped(void *x)
 int main(int argc, char **argv)
 {
     t_list *list;
-    //t_list *last;
+    t_list *head;
     t_list *map;
     int i;
     
@@ -32,35 +32,36 @@ int main(int argc, char **argv)
    //last = ft_lstlast(list);
    //printf("lst_last: %s\n", (char *)last->content);
    i = 1;
-    while (list != NULL)
+   head = list;
+    while (head != NULL)
    {
-       printf("(*list).content %d: %s\n", i, (char *)list->content);
-       list = list->next;
+       printf("(*list).content %d: %s\n", i, (char *)head->content);
+       head = head->next;
        i++;
    }
-   map = ft_lstmap(list, &ft_mapped);
-   i = 1;
-    printf("lstsize map: %d\n", ft_lstsize(map));
-   while (map->next != NULL)
-   {
-       printf("(*map).content %d: %s\n", i, (char *)map->content);
-       map = map->next;
-       i++;
-   }
+   map = ft_lstmap(list, &ft_finnish);
+    return 0;
+}
+
+//ft_putnbr_fd
+
+/*int main(int argc, char **argv)
+{
+    (void)argc;
+
+    ft_putnbr_fd(atoi(argv[1]), 1);
     return 0;
 }*/
 
 // ft_itoa
 
-char	*itoa_test(int nb);
-
-int main(int argc, char **argv)
+/*int main(int argc, char **argv)
 {
    (void)argc;
     printf("ft_itoa: %s\n", ft_itoa(atoi(argv[1])));
     //printf("itoa_test: %s\n", itoa(atoi(argv[1])));
     return 0;
-}
+}*/
 
 // ft_strnstr
 
