@@ -52,15 +52,15 @@ int main(int argc, char **argv)
 
 // ft_itoa
 
-/*char	*itoa_test(int nb);
+char	*itoa_test(int nb);
 
 int main(int argc, char **argv)
 {
    (void)argc;
     printf("ft_itoa: %s\n", ft_itoa(atoi(argv[1])));
-    printf("itoa_test: %s\n", itoa_test(atoi(argv[1])));
+    //printf("itoa_test: %s\n", itoa(atoi(argv[1])));
     return 0;
-}*/
+}
 
 // ft_strnstr
 
@@ -159,12 +159,12 @@ int main(int argc, char **argv)
 
 // ft_strrchr
 
-int main(int argc, char **argv)
+/*int main(int argc, char **argv)
 {
     printf("ft_strrchr: %s\n", ft_strrchr(argv[1], atoi(argv[argc - 1])));
     printf("strrchr: %s\n", strrchr(argv[1], atoi(argv[argc - 1])));
     return 0;
-}
+}*/
 
 // ft_strchr
 

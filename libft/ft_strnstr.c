@@ -6,7 +6,7 @@
 /*   By: vbaron <vincentbaron1996@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:16:03 by vbaron            #+#    #+#             */
-/*   Updated: 2020/04/30 00:44:43 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/04/30 12:07:48 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,4 @@ char *ft_strnstr(const char	*big, const char *little, size_t len)
         i++;
     }
     return (NULL);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> fe421041d979ef426ac1136db1a82bb9e2cce2dc
