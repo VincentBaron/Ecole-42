@@ -31,9 +31,9 @@ char	*alloc_itoa(unsigned int n, int size, int sign)
 	return (itoa);
 }
 
-int	get_size(int n)
+int		get_size(int n)
 {
-	int size;
+	int	size;
 
 	size = 0;
 	if (n < 0)
@@ -49,9 +49,9 @@ int	get_size(int n)
 char	*ft_itoa(int n)
 {
 	unsigned int	nbx;
-	int		size;
-	int		sign;
-	char		*itoa;
+	int				size;
+	int				sign;
+	char			*itoa;
 
 	size = get_size(n);
 	sign = 0;
