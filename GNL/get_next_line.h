@@ -3,6 +3,7 @@
 
 # include <stdlib.h>
 # include <stdio.h>
+#include <unistd.h>
 
 char    *ft_strjoin(char *buffer, char *temp);
 size_t  ft_strlen(const char *s);

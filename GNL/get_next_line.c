@@ -3,6 +3,19 @@
 #include <fcntl.h>
 
 #include "get_next_line.h"
+#define BUFFER_SIZE  30
+
+int check_error(int fd, char **line, char *tempx)
+{
+    if (fd == -1 || line == NULL)
+        return (-1);
+    if (!*tempx)
+    {
+        if (!(tempx = malloc(sizeof(char) * (BUFFER_SIZE+1))))
+            return (-1);
+    }
+    return (0);
+}
 
 int check_end_of_line(char *temp)
 {
@@ -21,38 +34,33 @@ int check_end_of_line(char *temp)
     return (i);
 }
 
-#define BUFFER_SIZE  30
-
 int get_next_line(int fd, char **line)
 {
     int ret;
     int x;
     char buffer[BUFFER_SIZE + 1];
     char *temp;
-    char *tempx;
+    static char *tempx;
     
     
     //free(tempx);
     temp = NULL;
+    if(check_error(fd, line, tempx) == -1)
+        return (-1);
     if (*tempx)
         temp = ft_strndup(tempx, ft_strlen(tempx));
     while ((ret = read(fd, buffer, BUFFER_SIZE)) > 0)
     {
         buffer[ret] = '\0';
-        //printf("buffer 1: %s\n", buffer);
-       //printf("temp 1: %s\n", temp);
         temp = ft_strjoin(buffer, temp);
-        //printf ("buffer 2: %s\n", buffer);
-        //printf("temp 2: %s\n", temp);
         if ((x = check_end_of_line(temp)) != 0)
         {
             ret = 1;
             break;
         }
     }
-   // printf("temp 1: %s\n", temp);
     *line = ft_strndup(temp, x);
-    tempx = ft_substr(temp, x);
+    tempx = ft_substr(temp, x + 1);
     free(temp);
     return (ret);
 }

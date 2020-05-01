@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_charset.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/01 20:23:50 by vbaron            #+#    #+#             */
+/*   Updated: 2020/05/01 20:23:55 by vbaron           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int check_charset(char c, char const *set)
+int	check_charset(char c, char const *set)
 {
-    while (*set)
-    {
-        if (*set == c)
-            return (1);
-        set++;
-    }
-    return (0);
+	while (*set)
+	{
+		if (*set == c)
+			return (1);
+		set++;
+	}
+	return (0);
 }
