@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbaron <vincentbaron1996@gmail.com>        +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:12:06 by vbaron            #+#    #+#             */
-/*   Updated: 2020/04/30 17:11:28 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/02 12:56:46 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*alloc_itoa(unsigned int n, int size, int sign)
+char  *alloc_itoa(unsigned int n, int size, int sign)
 {
-	char	*itoa;
+	char  *itoa;
 
 	if (!(itoa = (char *)malloc(sizeof(char) * (size + 1))))
 		return (0);
 	itoa[size] = '\0';
 	size--;
-	while (n > 0)
+	while (itoa > 0)
 	{
 		itoa[size] = n % 10 + 48;
 		size--;
@@ -31,9 +31,9 @@ char	*alloc_itoa(unsigned int n, int size, int sign)
 	return (itoa);
 }
 
-int		get_size(int n)
+int   get_size(int n)
 {
-	int	size;
+	int   size;
 
 	size = 0;
 	if (n < 0)
@@ -46,12 +46,12 @@ int		get_size(int n)
 	return (size);
 }
 
-char	*ft_itoa(int n)
+char  *ft_itoa(int n)
 {
-	unsigned int	nbx;
-	int				size;
-	int				sign;
-	char			*itoa;
+	unsigned int   nbx;
+	int            size;
+	int            sign;
+	char           *itoa;
 
 	size = get_size(n);
 	sign = 0;

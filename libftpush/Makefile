@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vbaron <vincentbaron1996@gmail.com>        +#+  +:+       +#+         #
+#    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/27 13:17:26 by vbaron            #+#    #+#              #
-#    Updated: 2020/04/27 13:17:30 by vbaron           ###   ########.fr        #
+#    Updated: 2020/05/02 13:21:08 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,15 +52,15 @@ SRC			=	ft_atoi.c    			\
 				ft_toupper.c 			\
 				ft_strnstr.c 			\
 
-SRC_BONUS	=	ft_lstnew_bonus.c		\
-				ft_lstsize_bonus.c		\
-				ft_lstadd_front_bonus.c	\
-				ft_lstadd_back_bonus.c	\
-				ft_lstlast_bonus.c		\
-				ft_lstdelone_bonus.c	\
-				ft_lstclear_bonus.c		\
-				ft_lstiter_bonus.c		\
-				ft_lstmap_bonus.c		\
+SRC_BONUS	=	ft_lstnew.c		\
+				ft_lstsize.c		\
+				ft_lstadd_front.c	\
+				ft_lstadd_back.c	\
+				ft_lstlast.c		\
+				ft_lstdelone.c	\
+				ft_lstclear.c		\
+				ft_lstiter.c		\
+				ft_lstmap.c		\
 
 
 #	Includes
