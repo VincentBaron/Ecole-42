@@ -2,9 +2,17 @@
 # include <string.h>
 #include <bsd/string.h>
 
+//ft_strjoin
+
+int main(int argc, char **argv)
+{
+    printf ("strjoin: %s\n", ft_strjoin(argv[1], argv[2]));
+    return (0);
+}
+
 // ft_lstsize
 
-t_list  *ft_finnish(void *x)
+/*t_list  *ft_finnish(void *x)
 {
     t_list *y;
     
@@ -41,7 +49,7 @@ int main(int argc, char **argv)
    }
    map = ft_lstmap(list, &ft_finnish);
     return 0;
-}
+}*/
 
 //ft_putnbr_fd
 

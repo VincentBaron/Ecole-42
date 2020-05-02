@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:12:06 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/02 13:14:33 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/02 17:08:56 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*alloc_itoa(unsigned int n, int size, int sign)
 	size--;
 	while (n > 0)
 	{
-		itoa[size] = n % 10 + 48;
+	itoa[size] = n % 10 + 48;
 		size--;
 		n /= 10;
 	}

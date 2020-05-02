@@ -12,72 +12,67 @@ size_t  ft_strlen(const char *s)
     return (i);
 }
 
-char *ft_strndup(char *temp, int n)
+char	*ft_strdup(const char *s)
 {
-    char *line;
-    int i;
-    //printf ("temp dup: %s\n", temp);
-    if(!(line = (char *)malloc(sizeof(char) * (n + 1))))
-        return (NULL);
-    
-    i = 0;
-    while (i < n)
-    {
-        line[i] = temp[i];
-        i++;
-    }
-    line[i] = '\0';
-    //free(temp);
-    return (line);
+	char	*dup;
+	int		size;
+	int		i;
+
+	size = 0;
+	while (s[size])
+		size++;
+	if (!(dup = malloc(sizeof(char) * (size + 1))))
+		return (0);
+	i = 0;
+	while (i < size)
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
 }
 
-char *ft_substr(char *temp, int x)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    char *tempx;
-    int i;
-    
-    if(!(tempx = (char *)malloc(sizeof(char) * (x + 1))))
-        return (NULL);
-    i = 0;
-    while (temp[x] != '\0')
-    {
-        tempx[i] = temp[x];
-        i++;
-        x++;
-    }
-    tempx[i] = '\0';
-    return (tempx);
+	char			*sub;
+	unsigned int	i;
+
+	if (!(sub = malloc(sizeof(char) * (len + 1))))
+		return (0);
+	i = 0;
+	while (i < len)
+	{
+		sub[i] = s[start];
+		i++;
+		start++;
+	}
+	sub[i] = '\0';
+	return (sub);
 }
 
-char *ft_strjoin(char *buffer, char *temp)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    char *tempnew;
-    char *ptempnew;
-    
-    //printf("buffer: %s\n", buffer);
-    //printf("temp: %s\n", temp);
-    
-    if (temp == NULL)
-    {
-        tempnew = ft_strndup(buffer, ft_strlen(buffer));
-        return (tempnew);
-    }
-    if (!(tempnew = (char *)malloc(sizeof(char) * (ft_strlen(buffer) + ft_strlen(temp) + 1))))
-        return (NULL);
-    ptempnew = tempnew;
-    while (*temp)
-    {
-        *tempnew = *temp;
-        tempnew++;
-        temp++;
-    }
-    while (*buffer)
-    {
-        *tempnew = *buffer;
-        tempnew++;
-        buffer++;
-    }
-    *tempnew = '\0';
-    //printf("tempnew: %s\n", tempnew);
-    return (ptempnew);
+	char	*join;
+	int		size;
+	int		i;
+
+	size = ft_strlen(s1) + ft_strlen(s2) + 1;
+	if (!(join = malloc(sizeof(char) * size)))
+		return (0);
+	i = 0;
+	while (*s1 && i < size)
+	{
+		join[i] = *s1;
+		s1++;
+		i++;
+	}
+	while (*s2 && i < size)
+	{
+		join[i] = *s2;
+		s2++;
+		i++;
+	}
+	join[i] = '\0';
+	return (join);
 }

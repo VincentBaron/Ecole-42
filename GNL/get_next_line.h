@@ -5,9 +5,9 @@
 # include <stdio.h>
 #include <unistd.h>
 
-char    *ft_strjoin(char *buffer, char *temp);
+char	*ft_strjoin(char const *s1, char const *s2);
 size_t  ft_strlen(const char *s);
-char    *ft_strndup(char *temp, int n);
-char    *ft_substr(char *temp, int x);
+char	*ft_strdup(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

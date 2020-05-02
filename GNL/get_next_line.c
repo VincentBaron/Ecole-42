@@ -1,84 +1,103 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/03 00:40:53 by vbaron            #+#    #+#             */
+/*   Updated: 2020/05/03 01:01:48 by vbaron           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 
 #include "get_next_line.h"
-#define BUFFER_SIZE  30
+#define BUFFER_SIZE  20
 
-int check_error(int fd, char **line, char *tempx)
-{
-    if (fd == -1 || line == NULL)
-        return (-1);
-    if (!*tempx)
-    {
-        if (!(tempx = malloc(sizeof(char) * (BUFFER_SIZE+1))))
-            return (-1);
-    }
-    return (0);
-}
-
-int check_end_of_line(char *temp)
+int check_line(char *str)
 {
     int i;
     
     i = 0;
-    //printf ("temp check_end: %s\n", temp);
-    while (temp[i])
+    if (!str)
+        return (-1);
+    while (str[i])
     {
-        if (temp[i] == '\n')
-            break;
+        if (str[i] == '\n')
+            return (i);
         i++;
     }
-    if (temp[i] == '\0')
-        return (0);
-    return (i);
+    return (-1);
+}
+
+void    read_file(int fd, char **leftover, char *buf, int *res)
+{
+    while(check_line(*leftover) == -1 && (*res = read(fd, buf, BUFFER_SIZE) > 0))
+    {
+        buf[*res] = '\0';
+        *leftover = ft_strjoin(*leftover, buf);
+    }
+}
+
+char    *ft_free(char *str)
+{
+    str = NULL;
+    free(NULL);
+    return (str);
 }
 
 int get_next_line(int fd, char **line)
 {
-    int ret;
-    int x;
-    char buffer[BUFFER_SIZE + 1];
-    char *temp;
-    static char *tempx;
-    
-    
-    //free(tempx);
-    temp = NULL;
-    if(check_error(fd, line, tempx) == -1)
+    static char *leftover = NULL;
+    char *tmp;
+    char buf[BUFFER_SIZE + 1];
+    int res;
+
+    if (fd < 0 || BUFFER_SIZE < 1 || read(fd, buf, 0) < 0 || line == NULL)
         return (-1);
-    if (*tempx)
-        temp = ft_strndup(tempx, ft_strlen(tempx));
-    while ((ret = read(fd, buffer, BUFFER_SIZE)) > 0)
+    read_file(fd, &leftover, buf, &res);
+    if (check_line(leftover) > -1)
     {
-        buffer[ret] = '\0';
-        temp = ft_strjoin(buffer, temp);
-        if ((x = check_end_of_line(temp)) != 0)
-        {
-            ret = 1;
-            break;
-        }
+        *line = ft_substr(leftover, 0, check_line(leftover));
+        tmp = ft_strdup(leftover);
+        leftover = ft_free(leftover);
+        leftover = ft_substr(tmp, check_line(tmp) + 1, ft_strlen(tmp));
+        tmp = ft_free(tmp);
+        return (1);
     }
-    *line = ft_strndup(temp, x);
-    tempx = ft_substr(temp, x + 1);
-    free(temp);
-    return (ret);
+    else
+    {
+        *line = ft_strdup(leftover);
+        leftover = ft_free(leftover);
+    }
+    return (0);
+    
 }
 
 int main()
 {
     int fd;
     char *line;
-    
+
     fd = open("monologue_cleopatre.txt", O_RDONLY);
     if (fd == -1)
     {
         printf ("error open");
-        return 1;
+        return (1);
     }
-    while (get_next_line(fd, &line) != 0)
+    printf("yo");
+    while (get_next_line(fd, &line) > 0)
     {    
         printf("%s\n", line);
     }
+    if (close(fd) == -1)
+    {
+        printf("error close");
+        return (1);
+    }
+
     return 0;
 }
