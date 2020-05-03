@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:15:18 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/02 20:14:51 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/03 19:42:43 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		size;
 	int		i;
 
+	if (!s1 && !s2)
+		return (NULL);
 	size = ft_strlen(s1) + ft_strlen(s2) + 1;
 	if (!(join = malloc(sizeof(char) * size)))
 		return (0);
