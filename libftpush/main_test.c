@@ -85,14 +85,14 @@ int main(int argc, char **argv)
 
 // ft_substr
 
-/*char		*substr_test(char const *s, unsigned int start, size_t len);
+char		*substr_test(char const *s, unsigned int start, size_t len);
 
 int main(int argc, char **argv)
 {
     printf("ft_substr: %s\n", ft_substr(strdup(argv[1]), atoi(argv[2]), atoi(argv[argc - 1])));
-    printf("substr_test: %s\n", substr_test(strdup(argv[1]), atoi(argv[2]), atoi(argv[argc - 1])));
+    printf("substr_test: %s\n", substr(strdup(argv[1]), atoi(argv[2]), atoi(argv[argc - 1])));
     return 0;
-}*/
+}
 
 // ft_strdup
 
@@ -195,12 +195,12 @@ int main(int argc, char **argv)
 
 // ft_memcmp
 
-int main(int argc, char **argv)
+/*int main(int argc, char **argv)
 {
     printf("ft_memcmp: %d\n", (int)ft_memcmp(argv[1], argv[2], atoi(argv[argc - 1])));
     printf("memcmp: %d\n", (int)memcmp(argv[1], argv[2], atoi(argv[argc - 1])));
     return 0;
-}
+}*/
 
 // ft_memchr
 

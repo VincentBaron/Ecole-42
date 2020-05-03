@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbaron <vincentbaron1996@gmail.com>        +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:16:42 by vbaron            #+#    #+#             */
-/*   Updated: 2020/04/27 13:16:44 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/03 19:37:48 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*sub;
 	unsigned int	i;
 
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		len = 0;
 	if (!(sub = malloc(sizeof(char) * (len + 1))))
 		return (0);
 	i = 0;
