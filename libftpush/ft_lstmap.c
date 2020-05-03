@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:13:11 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/04 00:01:12 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/04 00:08:51 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	new = head;
 	while (lst)
 	{
-		new = lst_new(f(lst));
+		new = f(lst);
 		lst = lst->next;
 		new = new->next;
 	}
