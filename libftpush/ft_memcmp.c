@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:13:51 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/03 18:11:28 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/03 18:13:22 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int i;
+	size_t i;
 	
 	if (n == 0)
 		return (0);
