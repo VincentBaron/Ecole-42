@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:16:32 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/03 19:48:53 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/03 19:50:21 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ char	*ft_strndup(char *temp, int n)
 	char	*line;
 	int		i;
 
-	if (!temp || n == 0)
-		return (NULL);
 	if (!(line = (char *)malloc(sizeof(char) * (n + 1))))
 		return (NULL);
 	i = 0;
