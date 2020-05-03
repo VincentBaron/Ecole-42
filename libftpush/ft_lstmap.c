@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbaron <vincentbaron1996@gmail.com>        +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:13:11 by vbaron            #+#    #+#             */
-/*   Updated: 2020/04/30 20:27:50 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/03 23:46:21 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,18 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new_lst;
-	t_list	*new_elem;
+	t_list	*new;
+	t_list	*head;
 
+	(void)del;
 	if (!f || !del)
 		return (NULL);
-	new_lst = NULL;
-	while (lst)
+	new = head;
+	while (lst->next)
 	{
-		if (!(new_elem = ft_lstnew(f(lst->content))))
-		{
-			ft_lstclear(&new_lst, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&new_lst, new_elem);
+		new = f(lst);
 		lst = lst->next;
+		new = new->next;
 	}
-	return (new_lst);
+	return (head);
 }
