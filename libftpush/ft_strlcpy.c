@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbaron <vincentbaron1996@gmail.com>        +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:15:30 by vbaron            #+#    #+#             */
-/*   Updated: 2020/04/29 23:56:07 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/03 19:25:38 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	j;
 
 	i = 0;
+	if (!dst && !src)
+		return ((void *)0);
 	while (src[i])
 		i++;
 	if (size == 0)
