@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:13:59 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/03 16:50:29 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/03 17:06:17 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if (!dest || !src || n == 0)
+	void *head;
+	
+	if (!dest || !src)
 		return (NULL);
+	head = dest;
 	while (n > 0)
 	{
 		*((char *)dest) = *((char *)src);
@@ -23,5 +26,5 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		src++;
 		n--;
 	}
-	return (dest);
+	return (head);
 }
