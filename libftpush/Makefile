@@ -6,7 +6,7 @@
 #    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/27 13:17:26 by vbaron            #+#    #+#              #
-#    Updated: 2020/05/03 16:04:31 by vbaron           ###   ########.fr        #
+#    Updated: 2020/05/03 16:56:00 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -97,9 +97,6 @@ all:			${NAME}
 ${NAME}:		${OBJS}
 				${AR} ${NAME} ${OBJS}
 
-so :			${AR} ${NAME}
-       		${CC} -o libft.so
-				
 clean:			
 				${RM} ${OBJS} ${OBJS_B}
 
