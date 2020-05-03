@@ -63,13 +63,13 @@ int main(int argc, char **argv)
 
 // ft_itoa
 
-/*int main(int argc, char **argv)
+int main(int argc, char **argv)
 {
    (void)argc;
     printf("ft_itoa: %s\n", ft_itoa(atoi(argv[1])));
     //printf("itoa_test: %s\n", itoa(atoi(argv[1])));
     return 0;
-}*/
+}
 
 // ft_strnstr
 
@@ -85,14 +85,14 @@ int main(int argc, char **argv)
 
 // ft_substr
 
-char		*substr_test(char const *s, unsigned int start, size_t len);
+/*char		*substr_test(char const *s, unsigned int start, size_t len);
 
 int main(int argc, char **argv)
 {
     printf("ft_substr: %s\n", ft_substr(strdup(argv[1]), atoi(argv[2]), atoi(argv[argc - 1])));
     printf("substr_test: %s\n", substr(strdup(argv[1]), atoi(argv[2]), atoi(argv[argc - 1])));
     return 0;
-}
+}*/
 
 // ft_strdup
 

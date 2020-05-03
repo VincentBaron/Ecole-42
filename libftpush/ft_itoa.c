@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:12:06 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/03 20:09:59 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/03 20:17:03 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,6 @@ int		get_size(int n)
 {
 	int	size;
 
-	if (n == 0)
-	{
-		size = 0;
-		return (size);
-	}
 	size = 0;
 	if (n < 0)
 		size++;
@@ -69,6 +64,6 @@ char	*ft_itoa(int n)
 		nbx = (unsigned int)n;
 	itoa = alloc_itoa(nbx, size, sign);
 	if (!n)
-		*itoa = '0';
+		itoa = "0\0";
 	return (itoa);
 }
