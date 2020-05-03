@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:16:32 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/03 19:56:15 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/03 19:57:29 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ char	*ft_strtrim(const char *s1, char const *set)
 	if (!s1[x])
 		return (ft_strdup(""));
 	while (s1[y] && ft_strchr(set, s1[y]))
-		j--;
+		y--;
 	return (ft_substr(s1, x, y - x + 1));
 }
