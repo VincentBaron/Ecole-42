@@ -6,7 +6,7 @@
 #    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/27 13:17:26 by vbaron            #+#    #+#              #
-#    Updated: 2020/05/02 13:21:08 by vbaron           ###   ########.fr        #
+#    Updated: 2020/05/03 16:04:31 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,7 @@ ATTRIBUT 	= 	-c
 
 #	Rules
 
-all:			${NAME} bonus
+all:			${NAME}
 
 -c.o:			
 				${CC} ${CFLAGS} ${ATTRIBUT} $< -o $(<:.c=.o) -I${INCLUDES}
@@ -97,6 +97,9 @@ all:			${NAME} bonus
 ${NAME}:		${OBJS}
 				${AR} ${NAME} ${OBJS}
 
+so :			${AR} ${NAME}
+       		${CC} -o libft.so
+				
 clean:			
 				${RM} ${OBJS} ${OBJS_B}
 
