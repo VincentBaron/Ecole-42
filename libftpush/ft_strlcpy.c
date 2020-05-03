@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:15:30 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/03 19:27:11 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/03 19:28:15 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	i = 0;
 	if (!dst && !src)
-		return ((void)0);
+		return (0);
 	while (src[i])
 		i++;
 	if (size == 0)
