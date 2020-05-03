@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbaron <vincentbaron1996@gmail.com>        +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:14:59 by vbaron            #+#    #+#             */
-/*   Updated: 2020/04/27 13:15:00 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/03 23:35:31 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ char	**ft_split(char const *s, char c)
 	char	**split;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	if (!(split = (char **)malloc(sizeof(char *) * (split_size(s, c)))))
 		return (0);
 	i = 0;
