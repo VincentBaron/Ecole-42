@@ -255,20 +255,20 @@ int main(int argc, char **argv)
     return 0;
 }*/
 
-/*// ft_memccpy
+// ft_memccpy
 
 int main(int argc, char **argv)
 {
     printf("ft_memccpy: %s\n", (char *)ft_memccpy(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 2]), atoi(argv[argc - 1])));
     printf("memccpy: %s\n", (char *)memccpy(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 2]), atoi(argv[argc - 1])));
     return 0;
-}*/
+}
 
 // ft_memcpy
 
-int main(int argc, char **argv)
+/*int main(int argc, char **argv)
 {
     printf("ft_memcpy: %s\n", (char *)ft_memcpy(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
     printf("memcpy: %s\n", (char *)memcpy(strdup(argv[1]), strdup(argv[2]), atoi(argv[argc - 1])));
     return 0;
-}
+}*/

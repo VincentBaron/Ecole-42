@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbaron <vincentbaron1996@gmail.com>        +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:13:35 by vbaron            #+#    #+#             */
-/*   Updated: 2020/04/27 20:15:43 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/03 17:17:12 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,16 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	const char		*x;
-	char			*y;
-	unsigned int	i;
-
-	x = (const char *)src;
-	y = dest;
-	i = 0;
-	while (i < n)
+	if (!dest && !src)
+		return ((void *)0);
+	while (n > 0)
 	{
-		*y = *x;
-		if (*x == c)
-			return (y + 1);
-		y++;
-		x++;
-		i++;
+		*((char *)dest) = *((char *)src);
+		if (*((char *)src) == c)
+			return (dest + 1);
+		dest++;
+		src++;
+		n--;
 	}
 	return (NULL);
 }
