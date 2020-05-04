@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbaron <vincentbaron1996@gmail.com>        +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 13:10:31 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/01 18:00:58 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/04 14:48:46 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *nptr)
 {
 	int	i;
-	int	nbr;
+	long	nbr;
 	int	sign;
 
 	i = 0;
@@ -34,5 +34,5 @@ int	ft_atoi(const char *nptr)
 		nbr = nbr * 10 + (nptr[i] - 48);
 		i++;
 	}
-	return (nbr * sign);
+	return ((nbr * sign));
 }
