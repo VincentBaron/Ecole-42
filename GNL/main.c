@@ -1,13 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/27 19:27:42 by vbaron            #+#    #+#             */
+/*   Updated: 2020/05/27 20:37:28 by vbaron           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 int main(int argc, char **argv)
 {
     (void)argc;
+    (void)argv;
     int fd;
     char *line;
     int ret;
 
-    fd = open(argv[1], O_RDONLY);
+    fd = open("text.txt", O_RDONLY);
     if (fd == -1)
     {
         printf ("error open");

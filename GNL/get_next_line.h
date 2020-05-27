@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/11 11:51:06 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/12 11:18:53 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/27 21:00:01 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,8 @@ size_t	ft_strlen(const char *s);
 int		check_line(char *s);
 void	ft_parse(char **leftover, char *buf, int fd, int *ret);
 int		get_next_line(int fd, char **line);
+int		split_size(char const *s, char c);
+char	*alloc_array(char const *s, char c);
+char	**ft_split(char const *s, char c);
 
 #endif

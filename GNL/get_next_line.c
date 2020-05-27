@@ -6,32 +6,33 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/03 00:40:53 by vbaron            #+#    #+#             */
-/*   Updated: 2020/05/11 11:52:58 by vbaron           ###   ########.fr       */
+/*   Updated: 2020/05/27 20:54:24 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int		check_line(char *s)
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	if (!s)
-		return (-1);
+		return (0);
 	i = 0;
 	while (s[i])
-	{
-		if (s[i] == '\n')
-			return (i);
 		i++;
-	}
-	return (-1);
+	return (i);
+}
+
+void	ft_free(char *s)
+{
+	free(s);
+	s = NULL;
 }
 
 void	ft_parse(char **leftover, char *buf, int fd, int *ret)
 {
-	while (check_line(*leftover) == -1
-	&& (*ret = read(fd, buf, BUFFER_SIZE)) > 0)
+	while ((*ret = read(fd, buf, BUFFER_SIZE)) > 0)
 	{
 		buf[*ret] = '\0';
 		*leftover = ft_strjoin(*leftover, buf);
@@ -42,26 +43,21 @@ int		get_next_line(int fd, char **line)
 {
 	char		buf[BUFFER_SIZE + 1];
 	static char	*leftover = NULL;
-	char		*temp;
-	int			ret;
+	int ret;
+	static char **lines_list = NULL;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || !line || read(fd, buf, 0) < 0)
 		return (-1);
-	ft_parse(&leftover, buf, fd, &ret);
-	if (check_line(leftover) > -1)
+	if (!lines_list)
 	{
-		*line = ft_substr(leftover, 0, check_line(leftover));
-		temp = ft_substr(leftover, check_line(leftover) + 1,
-		ft_strlen(leftover));
-		ft_free(leftover);
-		leftover = ft_substr(temp, 0, ft_strlen(temp));
-		ft_free(temp);
-		return (1);
-	}
-	else
-	{
-		*line = ft_substr(leftover, 0, ft_strlen(leftover));
+		ft_parse(&leftover, buf, fd, &ret);
+		lines_list = ft_split(leftover, '\n');
 		ft_free(leftover);
 	}
-	return (0);
+	*line = ft_substr(lines_list[0], 0, ft_strlen(lines_list[0]));
+	ft_free(lines_list[0]);
+	lines_list++;
+	if (*lines_list == NULL)
+		return 0;
+	return (1);
 }
